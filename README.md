@@ -1,5 +1,11 @@
 # Expo用React Native向けプッシュ通知プラグイン
 
+## インストール
+
+```
+npm i ncmb-expo-push
+```
+
 ## 使い方
 
 ```js
