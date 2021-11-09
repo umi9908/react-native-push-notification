@@ -14,7 +14,7 @@
     "expo-notifications": "^0.13.3",
     "expo-permissions": "^13.0.3",
     "ncmb-react-native": "^2.0.5",
-    "react-native": "^0.63.4"
+    "react-native": "^0.64.2"
   },
   "devDependencies": {
     "@types/es6-promise": "^3.3.0",
