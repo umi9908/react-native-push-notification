@@ -58,7 +58,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var Permissions = __importStar(require("expo-permissions"));
 var Notifications = __importStar(require("expo-notifications"));
 var ncmb_react_native_1 = __importStar(require("ncmb-react-native"));
 var expo_constants_1 = __importDefault(require("expo-constants"));
@@ -97,11 +96,11 @@ var NCMBPushNotification = /** @class */ (function () {
                     case 0:
                         if (!expo_constants_1.default.isDevice)
                             throw new Error('This is not device');
-                        return [4 /*yield*/, Permissions.getAsync(Permissions.NOTIFICATIONS)];
+                        return [4 /*yield*/, Notifications.getPermissionsAsync()];
                     case 1:
                         currentStatus = (_a.sent()).status;
                         if (!(currentStatus !== 'granted')) return [3 /*break*/, 3];
-                        return [4 /*yield*/, Permissions.askAsync(Permissions.NOTIFICATIONS)];
+                        return [4 /*yield*/, Notifications.requestPermissionsAsync()];
                     case 2:
                         status = (_a.sent()).status;
                         currentStatus = status;
