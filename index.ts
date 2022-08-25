@@ -1,6 +1,6 @@
 import * as Notifications from "expo-notifications";
 import NCMB, { NCMBInstallation } from "ncmb-react-native";
-import Constants from "expo-constants";
+import * as Device from "expo-device";
 import { Platform } from "react-native";
 
 class NCMBPushNotification {
@@ -22,7 +22,7 @@ class NCMBPushNotification {
   }
 
   async getDeviceToken(): Promise<string | null> {
-    if (!Constants.isDevice) throw new Error("This is not device");
+    if (!Device.isDevice) throw new Error("This is not device");
     let { status: currentStatus } = await Notifications.getPermissionsAsync();
     if (currentStatus !== "granted") {
       const { status } = await Notifications.requestPermissionsAsync();
